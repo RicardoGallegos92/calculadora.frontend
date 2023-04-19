@@ -17,12 +17,13 @@ function operarNumeros(){
             return ("Syntax Error");
     }
 }
-
+//Revisión por consola
 function mostrarDatos(){
-    console.log("numeroEnPantalla "+numeroEnPantalla);
-    console.log("numero1 "+numero1);
-    console.log("numero2 "+numero2);
-    console.log("operacion "+operacion);
+    console.log("numeroEnPantalla ["+numeroEnPantalla+"]");
+    console.log("numero1 ["+numero1+"]");
+    console.log("numero2 ["+numero2+"]");
+    console.log("operacion ["+operacion+"]");
+    console.log("\n");
 }
 
 $(document).ready(function(){
@@ -34,32 +35,40 @@ $(document).ready(function(){
             numeroEnPantalla += $(this).text();
         }
         $("#pantalla").val(numeroEnPantalla);
-        //console.log("BTNnumero numero en Pantalla "+numeroEnPantalla);
+
+        // console.log("btn-Numero ");
+        // mostrarDatos();
     });
 
     $("button[type=buttonOperador]").click(function(){
         numero1 = parseFloat($("#pantalla").val());
-        console.log("numero1 "+numero1);
         operacion = $(this).text();
         $("#pantalla").val(0);
         numeroEnPantalla = '';
-        //console.log("OPERADOR numero en Pantalla "+numeroEnPantalla);
+        
+        // console.log("btn-Operador ");
+        // mostrarDatos();
     });
 
     $("#btn-igual").click(function(){
         numero2 = parseFloat(numeroEnPantalla);
-        console.log("numero2 "+numero2);
         var resultado = operarNumeros();
         $("#pantalla").val(resultado);
+        numero1 = resultado;
         numero2 = 0;
         operacion = '';
-        //console.log("IGUAL numero en Pantalla "+numeroEnPantalla);
+        numeroEnPantalla = '';
+
+        // console.log("btn-igual ");
+        // mostrarDatos();
     });
 
     $("#btn-borrar").click(function(){
         numero1 = numero2 = 0;
-        numeroEnPantalla = '';
+        operacion = numeroEnPantalla = '';
         $("#pantalla").val(0);
-        mostrarDatos();
+
+        // console.log("btn-borrar ");
+        // mostrarDatos();
     });
 });

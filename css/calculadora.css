@@ -11,12 +11,11 @@ h1{
     background-image:
         url("https://static.vecteezy.com/system/resources/previews/007/190/531/large_2x/font-design-for-math-and-happy-children-free-vector.jpg");
     background-size: contain;
-    backdrop-filter: blur(1000px);
 }
 
 .container{
-    min-width: 200px;
-    max-width: 250px;
+    min-width: 170px;
+    max-width: 200px;
     background-color: gray;
 }
 
@@ -35,14 +34,13 @@ button{
 }
 
 footer{
-    width: 90%;
+    width: 80%;
     text-align: end;
     background-color: bisque;
-    padding-right: 15px;
     
     position: fixed;
     bottom: 0px;
     right: 0;
     left: 0;
-    margin:auto;
+    margin: auto;
 }
