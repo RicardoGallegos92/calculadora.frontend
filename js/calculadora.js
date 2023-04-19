@@ -1,43 +1,65 @@
-var dato1=document.getElementById("dato1");
-var dato2=document.getElementById("dato2");
-const mostrar=document.getElementById("resultado");
-var num1=0;
-var num2=0;
+let numeroEnPantalla = "";
+let numero1 = 0;
+let numero2 = 0;
+let operacion = '';
 
-function insertarResultado(resultadoOperacion)
-{
-    //alert(resultadoOperacion);
-    const nodo = document.createElement("p");
-    const res = document.createTextNode(resultadoOperacion);
-    nodo.appendChild(res);
-    mostrar.appendChild(nodo);
+function operarNumeros(){
+    switch(operacion){
+        case '*':
+            return (numero1*numero2);
+        case '/':
+            return (numero1/numero2);
+        case '-':
+            return (numero1-numero2);
+        case '+':
+            return (numero1+numero2);
+        default:
+            return ("Syntax Error");
+    }
 }
 
-function asignar(){
-    num1 = parseInt(dato1.value);
-    num2 = parseInt(dato2.value);
+function mostrarDatos(){
+    console.log("numeroEnPantalla "+numeroEnPantalla);
+    console.log("numero1 "+numero1);
+    console.log("numero2 "+numero2);
+    console.log("operacion "+operacion);
 }
 
-function sumar()
-{
-    asignar();
-    insertarResultado(num1+num2);
-}
+$(document).ready(function(){
+    $("button[type=buttonNumber]").click(function(){
+        if (numeroEnPantalla == ""){
+            numeroEnPantalla = $(this).text();
+        }
+        else{
+            numeroEnPantalla += $(this).text();
+        }
+        $("#pantalla").val(numeroEnPantalla);
+        //console.log("BTNnumero numero en Pantalla "+numeroEnPantalla);
+    });
 
-function restar()
-{
-    asignar();
-    insertarResultado(num1-num2);
-}
+    $("button[type=buttonOperador]").click(function(){
+        numero1 = parseFloat($("#pantalla").val());
+        console.log("numero1 "+numero1);
+        operacion = $(this).text();
+        $("#pantalla").val(0);
+        numeroEnPantalla = '';
+        //console.log("OPERADOR numero en Pantalla "+numeroEnPantalla);
+    });
 
-function multiplicar()
-{
-    asignar();
-    insertarResultado(num1*num2);
-}
+    $("#btn-igual").click(function(){
+        numero2 = parseFloat(numeroEnPantalla);
+        console.log("numero2 "+numero2);
+        var resultado = operarNumeros();
+        $("#pantalla").val(resultado);
+        numero2 = 0;
+        operacion = '';
+        //console.log("IGUAL numero en Pantalla "+numeroEnPantalla);
+    });
 
-function dividir()
-{
-    asignar();
-    insertarResultado(num1/num2);
-}
+    $("#btn-borrar").click(function(){
+        numero1 = numero2 = 0;
+        numeroEnPantalla = '';
+        $("#pantalla").val(0);
+        mostrarDatos();
+    });
+});

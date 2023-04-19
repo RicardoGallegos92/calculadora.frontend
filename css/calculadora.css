@@ -1,0 +1,48 @@
+body{
+    background-image:
+        url("https://i0.wp.com/calmatters.org/wp-content/uploads/2021/08/math-curriculum.jpg?w=2000&ssl=1");
+    background-size: cover ;
+    backdrop-filter: blur(5px);
+    width: 100vw;
+    height: 100vh;
+}
+
+h1{
+    background-image:
+        url("https://static.vecteezy.com/system/resources/previews/007/190/531/large_2x/font-design-for-math-and-happy-children-free-vector.jpg");
+    background-size: contain;
+    backdrop-filter: blur(1000px);
+}
+
+.container{
+    min-width: 200px;
+    max-width: 250px;
+    background-color: gray;
+}
+
+button{
+    border-radius: 1rem;
+    border-color: white;
+    border-style: groove;
+}
+
+#pantalla{
+    justify-items: center;
+    font-weight: 800;
+    color: white;
+    background-color: rgba(0, 128, 0, 0.452);
+    max-width: 250px;
+}
+
+footer{
+    width: 90%;
+    text-align: end;
+    background-color: bisque;
+    padding-right: 15px;
+    
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    margin:auto;
+}

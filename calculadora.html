@@ -16,34 +16,55 @@
     >
 <!-- Add el mío CSS -->
     <link rel="stylesheet" href="./css/calculadora.css">
-    
 </head>
 
 
 <body>
-    <h1 class="text-center">CalculaDora</h1>
-    <div class="container bg-body-secondary">
-        <div class="mb-3">
-        <label for="dato1" class="form-label">Dato1 :</label>
-        <input type="number"
-            class="form-control" name="pantalla" id="pantalla" aria-describedby="helpId" placeholder="0">
-        </div>
-        <p class="p-3"></p>
-    <!-- Botones -->
-        <div class="text-center">
-            <button type="button" id="btn-sumar" onclick="sumar()" class="btn btn-primary">Sumar</button>
-            <button type="button" id="btn-restar" onclick="restar()" class="btn btn-danger">Restar</button>
-            <button type="button" id="btn-multiplicar" onclick="multiplicar()" class="btn btn-success">Multiplicar</button>
-            <button type="button" id="btn-dividir" onclick="dividir()" class="btn btn-warning">Dividir</button>
-            <p class="p-3"></p>
-            <div id="resultado">Resultado</div>
+    <h1 class="text-center pt-5"></h1>
+<!-- Caja Calculadora -->
+    <div class="container rounded">
+        <h2 class="text-center mx-5 pt-5">CalculaDora</h2>
+        <!-- Pantalla -->
+        <div class="m-3 d-flex justify-content-center">
+        <input type="text" readonly
+            class="justify form-control text-end border-3" name="pantalla" id="pantalla" aria-describedby="helpId" placeholder="0">
+    </div>
+<!-- Botones -->
+        <div class="text-center p-4">
+            <div class="row">
+                <button type="button" id="btn-borrar" class="col-12 text-bg-secondary">Borrar Todo</button>
+            </div>
+            <div class="row">
+                <button type="buttonNumber" id="btn-7" class="col-3 text-bg-secondary">7</button>
+                <button type="buttonNumber" id="btn-8" class="col-3 text-bg-secondary">8</button>
+                <button type="buttonNumber" id="btn-9" class="col-3 text-bg-secondary">9</button>
+                <button type="buttonOperador" id="btn-multiplicar" class="col-3 text-bg-secondary">*</button>
+            </div>
+            <div class="row">
+                <button type="buttonNumber" id="btn-4" class="col-3 text-bg-secondary">4</button>
+                <button type="buttonNumber" id="btn-5" class="col-3 text-bg-secondary">5</button>
+                <button type="buttonNumber" id="btn-6" class="col-3 text-bg-secondary">6</button>
+                <button type="buttonOperador" id="btn-dividir" class="col-3 text-bg-secondary">/</button>
+            </div>
+            <div class="row">
+                <button type="buttonNumber" id="btn-1" class="col-3 text-bg-secondary">1</button>
+                <button type="buttonNumber" id="btn-2" class="col-3 text-bg-secondary">2</button>
+                <button type="buttonNumber" id="btn-3" class="col-3 text-bg-secondary">3</button>
+                <button type="buttonOperador" id="btn-restar" class="col-3 text-bg-secondary">-</button>
+            </div>
+            <div class="row">
+                <button type="buttonNumber" id="btn-0" class="col-3 text-bg-secondary">0</button>
+                <button type="buttonNumber" id="btn-coma" class="col-3 text-bg-secondary">.</button>
+                <button type="buttonIgual" id="btn-igual" class="col-3 text-bg-secondary">=</button>
+                <button type="buttonOperador" id="btn-sumar" class="col-3 text-bg-secondary">+</button>
+            </div>
         </div>
     </div>
     
 <!-- Footer -->
 <div class="p-3"></div>
 <footer class="text-end bg-body-secondary fixed-bottom mx-5">
-    <p>Equipo Dinamita - 2023</p>
+    Ricardo Gallegos - 2023
 </footer>
 <!-- Llamada a JavaScript -->
 <script src="./js/calculadora.js"></script>
